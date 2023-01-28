@@ -1,1 +1,2 @@
-# Deden-den-dedeen.github.io
+# 作業ログ
+[gitの使い方](/source/git.mc)
