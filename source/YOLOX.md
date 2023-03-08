@@ -9,7 +9,7 @@
 !pip3 install -v -e .  # or  python3 setup.py develop
 ```
 
--nや-fを用いて、検出器を指定する
+-nや-fを用いて、検出器を指定する  
 参考：
 
 ```
@@ -40,7 +40,7 @@ drive.mount('/content/drive')
 %cd ./drive/MyDrive
 ```
 
-###FiftyOneのインストール
+### FiftyOneのインストール
 opencv-python-headlessの4.3以降のバージョンでは下位互換性が失われているためバージョンをダウングレード
 
 ```
@@ -48,7 +48,7 @@ opencv-python-headlessの4.3以降のバージョンでは下位互換性が失�
 !pip install "opencv-python-headless<4.3"
 ```
 
-###データセットのダウンロード
+### データセットのダウンロード
 
 ```
 import fiftyone.zoo as foz
@@ -73,14 +73,14 @@ dataset.persistent = True
 > - `only_matching` : Trueにすることで画像内に他のラベルが含まれている画像を取得しないようにする
 
 
-###データセットをtrainとvalidationに分割
+### データセットをtrainとvalidationに分割
 
 ```
 train_data = dataset[:80]
 val_data = dataset[80:100]
 ```
 
-###データセットをYOLOXの対応しているcocoに変換
+### データセットをYOLOXの対応しているcocoに変換
 
 ```
 classes = ["banana", "apple", "orange"]
@@ -103,7 +103,7 @@ val_data.export(
 > - `classes` : バウンディングボックスに付与するクラスを指定
 
 
-###YOLOXのインストール
+### YOLOXのインストール
 下記コマンドでYOLOXと必要なパッケージをインストールできる
 
 ```
@@ -114,7 +114,7 @@ val_data.export(
 ```
 
 
-###学習用フォルダの作成とデータセットの移動
+### 学習用フォルダの作成とデータセットの移動
 
 ```
 # フォルダの作成
@@ -131,9 +131,8 @@ val_data.export(
 ```
 
 
-##YOLOXの学習
-###tiny.pyの編集
-まず、下記で行うパスの追加を簡単にするためにtiny.pyをYOLOX直下に移動
+## YOLOXの学習
+### tiny.pyの編集
 
 ```
 %cd YOLOX
@@ -153,7 +152,7 @@ val_data.export(
 ```
 
 
-###重みのダウンロード
+### 重みのダウンロード
 `YOLOX_tiny`の重みをダウンロード
 
 ```
@@ -161,14 +160,14 @@ val_data.export(
 ```
 
 
-###学習
+### 学習
 
 ```
 !python tools/train.py -f yolox_tiny.py -b 16 -d 1 --fp16 -o -c ./yolox_tiny.pth
 ```
 
 
-###結果
+### 結果
 検証を行いたい画像ファイルをYOLOX直下に置く  
 先ほどの学習で保存されたモデルはYOLOX内の`YOLOX_outputs/yolox_tiny`に`best_ckpt.pth`という名前で保存されている  
 toolsの中にあるdemo.pyのimport文の真下に以下のコードを追記
