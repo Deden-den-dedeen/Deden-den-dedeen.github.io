@@ -1,4 +1,4 @@
-#YOLOXの使い方
+# YOLOXの使い方
 [物体検出手法の一つYOLOXのチュートリアル](https://book.st-hakky.com/docs/object-detection-yolox-tutorial/)
 [YOLOX(公式)](https://github.com/Megvii-BaseDetection/YOLOX)
 まずは、Driveのマウント
