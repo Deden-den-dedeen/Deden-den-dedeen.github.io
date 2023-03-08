@@ -28,7 +28,7 @@ python tools/demo.py image -f exps/default/yolox_s.py -c /path/to/your/yolox_s.p
 python tools/demo.py video -n yolox-s -c /path/to/your/yolox_s.pth --path /path/to/your/video --conf 0.25 --nms 0.45 --tsize 640 --save_result --device [cpu/gpu]
 ```
 
-# デモ学習(COCO)
+# COCOでの再現
 COCOデータセットの準備
 
 ```
