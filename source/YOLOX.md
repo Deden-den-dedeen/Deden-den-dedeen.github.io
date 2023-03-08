@@ -28,6 +28,34 @@ python tools/demo.py image -f exps/default/yolox_s.py -c /path/to/your/yolox_s.p
 python tools/demo.py video -n yolox-s -c /path/to/your/yolox_s.pth --path /path/to/your/video --conf 0.25 --nms 0.45 --tsize 640 --save_result --device [cpu/gpu]
 ```
 
+# デモ学習(COCO)
+COCOデータセットの準備
+
+```
+cd <YOLOX_HOME>
+ln -s /path/to/your/COCO ./datasets/COCO
+```
+
+-nを指定して、結果を再現
+
+```
+python -m yolox.tools.train -n yolox-s -d 8 -b 64 --fp16 -o [--cache]
+                               yolox-m
+                               yolox-l
+                               yolox-x
+```
+
+-fを使用する場合
+
+```
+python -m yolox.tools.train -f exps/default/yolox_s.py -d 8 -b 64 --fp16 -o [--cache]
+                               exps/default/yolox_m.py
+                               exps/default/yolox_l.py
+                               exps/default/yolox_x.py
+```
+
+
+
 # Google Colab で実行する場合(COCO,FiftyOne)
 まずは、Driveのマウント
 以下をGoogle Colabで実行
